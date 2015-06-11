@@ -1,2 +1,4 @@
 # CUGScraper
-Scrape the Complete University Guide's league tables.
+Compile list of subject links, scrape table data from each link and merge into master file.
+
+
