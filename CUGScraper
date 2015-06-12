@@ -17,7 +17,7 @@ def cookSoup(url):
 
 def getLinks():
 	list_of_links = [BASE_URL]
-	soup = requestSoup(BASE_URL)
+	soup = cookSoup(BASE_URL)
 
 	for link in soup.find('ul', {'class': 'links'}).findAll('a', href=True):
 		list_of_links.append(BASE_URL + link['href'])
@@ -74,7 +74,7 @@ def normaliseData(title, header, rows):
 
 
 def combineData(link):
-	soup = requestSoup(link)
+	soup = cookSoup(link)
 	title = getTitle(soup, link)
 	header = getHeader(soup)
 	rows = getRows(soup)
