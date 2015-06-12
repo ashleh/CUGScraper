@@ -78,7 +78,7 @@ def combineData(link):
 	title = getTitle(soup, link)
 	header = getHeader(soup)
 	rows = getRows(soup)
-	normalised_data = normaliseData(title, header, rows)
+	combined_data = normaliseData(title, header, rows)
 
 	return combined_data
 
@@ -87,7 +87,7 @@ def main():
 	joined_subjects = []
 	list_of_links = getLinks()
 	for link in list_of_links:
-		joined_subjects.append(combinedData(link))
+		joined_subjects.append(combineData(link))
 
 	pd.concat(joined_subjects).to_csv(PATH + 'final.csv', sep=',', index=False)
 
